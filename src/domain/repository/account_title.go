@@ -4,8 +4,9 @@ import (
 	m "accounting/src/domain/model"
 )
 
-// AccountTitleRepository 勘定科目リポジトリ
-type AccountTitleRepository interface {
-	Save(*m.AccountTitle) *m.AccountTitle
-	GetAll() []*m.AccountTitle
+// AccountTitle 勘定科目リポジトリ
+type AccountTitle interface {
+	Save(m.AccountTitle) *m.AccountTitle
+	GetAll() []m.AccountTitle
+	GetSalesTaxTypes(ids []m.ID) m.SalesTaxTypes
 }

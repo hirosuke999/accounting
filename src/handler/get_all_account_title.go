@@ -10,10 +10,9 @@ import (
 
 // GetAllAccountTitle 勘定科目を作成する
 func GetAllAccountTitle(ctx *gin.Context) {
-	db := store.GetDB()
-	repos := store.NewAccountTitleStore(db)
 
-	output := uc.GetAllAccountTitle(repos)
+	repo := store.NewAccountTitleStore()
+	output := uc.GetAllAccountTitle(*repo)
 
 	ctx.JSON(http.StatusOK, output)
 }

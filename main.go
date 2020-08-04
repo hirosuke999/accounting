@@ -11,7 +11,8 @@ import (
 
 // Migrate オートマイグレーション
 func Migrate(db *gorm.DB) {
-	db.AutoMigrate(&store.AccountTitleORM{})
+	db.AutoMigrate(&store.AccountTitle{})
+	db.AutoMigrate(&store.SalesTaxType{})
 }
 
 func main() {
@@ -28,6 +29,9 @@ func main() {
 	accountTitles := v1.Group("/account_titles")
 	accountTitles.POST("/", h.CreateAccountTitle)
 	accountTitles.GET("/", h.GetAllAccountTitle)
+
+	salesTaxTypes := v1.Group("/sales_tax_types")
+	salesTaxTypes.POST("/", h.CreateSalesTaxType)
 
 	// testAuth := r.Group("/api/ping")
 	// testAuth.GET("/", func(c *gin.Context) {

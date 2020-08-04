@@ -12,8 +12,8 @@ type GetAccountTitleOutput struct {
 }
 
 // GetAllAccountTitle 勘定科目の一覧を取得する
-func GetAllAccountTitle(repos r.AccountTitleRepository) []*GetAccountTitleOutput {
-	accountTitles := repos.GetAll()
+func GetAllAccountTitle(repo r.AccountTitle) []*GetAccountTitleOutput {
+	accountTitles := repo.GetAll()
 
 	results := []*GetAccountTitleOutput{}
 	for i := range accountTitles {
