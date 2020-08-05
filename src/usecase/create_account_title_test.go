@@ -14,7 +14,7 @@ import (
 func TestCreateAccountTitle(t *testing.T) {
 	t.Run("勘定科目を作成する", func(t *testing.T) {
 		var (
-			id       = uint(777)
+			id       = uint(1)
 			code     = "4107"
 			name     = "売上高"
 			taxTypes = SalesTaxTypes{
@@ -63,7 +63,7 @@ func TestCreateAccountTitle(t *testing.T) {
 			ReasonNoteNecessity:      reasonNoteNecessity,
 		})
 
-		t.Log(output)
+		// t.Log(output)
 		assert.Equal(t, id, output.ID)
 		assert.Equal(t, code, output.Code)
 		assert.Equal(t, name, output.Name)

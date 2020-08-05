@@ -1,6 +1,8 @@
 package model
 
-import "accounting/src/domain/model/enum"
+import (
+	"accounting/src/domain/model/enum"
+)
 
 // AccountTitle 勘定科目
 type AccountTitle struct {

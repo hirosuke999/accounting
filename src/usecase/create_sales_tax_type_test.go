@@ -27,7 +27,7 @@ func TestCreateSalesTaxType(t *testing.T) {
 
 		output := CreateSalesTaxType(repo, CreateSalesTaxTypeInput{Name: name})
 
-		t.Log(output)
+		// t.Log(output)
 		assert.Equal(t, id, output.ID)
 		assert.Equal(t, name, output.Name)
 	})
